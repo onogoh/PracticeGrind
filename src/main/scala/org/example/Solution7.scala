@@ -20,28 +20,28 @@ object Solution7 {
     def indexFlatten(i:Int,j:Int):Int={
       maxCol*i + j
     }
-    def canGo ( i:Int, j:Int,state:String):Boolean={
-      j<maxCol && j>=0 && i>=0 && i < maxRow &&  !state.contains(indexFlatten(i,j).toChar)
+    def canGo ( i:Int, j:Int,key:String):Boolean={
+      j<maxCol && j>=0 && i>=0 && i < maxRow &&  !key.contains(indexFlatten(i,j).toChar)
     }
 
-    def iterator (i:Int,j:Int,state:String="",step:Int=4,sum:String):Unit={
+    def iterator (i:Int,j:Int,key:String="",step:Int=4,value:String):Unit={
       step match{
-        case _ if step <=1 => paths.addOne(state,sum)
-        case _ => if (canGo(i,j+1,state)) {
-          iterator(i,j+1,state.+(indexFlatten(i,j+1).toChar),step-1,sum+A(i)(j+1).toString)}
-          if (canGo(i+1,j,state)) {
-            iterator(i+1,j,state.+(indexFlatten(i+1,j).toChar),step-1,sum+A(i+1)(j).toString)}
-          if (canGo(i-1,j,state)) {
-            iterator(i-1,j,state.+(indexFlatten(i-1,j).toChar),step-1,sum+A(i-1)(j).toString)}
-          if (canGo(i,j-1,state)) {
-            iterator(i,j-1,state.+(indexFlatten(i,j-1).toChar),step-1,sum+A(i)(j-1).toString)}
+        case _ if step <=1 => paths.addOne(key,value)
+        case _ => if (canGo(i,j+1,key)) {
+          iterator(i,j+1,key.+(indexFlatten(i,j+1).toChar),step-1,value+A(i)(j+1).toString)}
+          if (canGo(i+1,j,key)) {
+            iterator(i+1,j,key.+(indexFlatten(i+1,j).toChar),step-1,value+A(i+1)(j).toString)}
+          if (canGo(i-1,j,key)) {
+            iterator(i-1,j,key.+(indexFlatten(i-1,j).toChar),step-1,value+A(i-1)(j).toString)}
+          if (canGo(i,j-1,key)) {
+            iterator(i,j-1,key.+(indexFlatten(i,j-1).toChar),step-1,value+A(i)(j-1).toString)}
 
       }
     }
 
 
     for(i <- 0 until maxRow; j <- 0 until maxCol){
-      iterator(i,j,state=(indexFlatten(i,j).toChar).toString, sum = A(i)(j).toString)
+      iterator(i,j,key=indexFlatten(i,j).toChar.toString, value = A(i)(j).toString)
     }
 
     paths.values.toArray.map(x=>x.toInt).max
