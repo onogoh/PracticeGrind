@@ -7,7 +7,7 @@ import scala.collection.mutable
  *
  */
 
-object Solution1 {
+object Solution1Laser {
   case class Point(x:Double,y:Double)
 
   def main(args: Array[String]) {

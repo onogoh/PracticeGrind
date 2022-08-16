@@ -2,7 +2,7 @@ package org.example
 
 import scala.collection.mutable
 
-object Solution7 {
+object Solution7BiggestNumber4Steps {
   def main(args: Array[String]) {
 //    val x=Solution7(Array(Array(1, 1, 1),Array(1, 3, 4),Array(1, 4, 3)))
 //    val x=Solution7(Array(Array(0,1, 5, 0,0)))

@@ -3,7 +3,7 @@ package org.example
 import scala.collection.mutable
 
 
-object Solution3 {
+object Solution3SortContiguousWindow {
   def main(args: Array[String]) {
     val x=Solution3(Array(2, 4, 1, 6, 5, 9, 7))
     println(x)
@@ -12,7 +12,7 @@ object Solution3 {
   def Solution3(C:Array[Int]): Int ={
     val len = C.length-1
     if (len<=1){
-      return len
+      return 1
     }
     def swap(index:Int):Unit={
       val temp = C(index-1)
@@ -20,7 +20,7 @@ object Solution3 {
       C(index) = temp
     }
 
-    def iterator(i:Int=1,j:Int=0,count:Int=1):Int={
+    def iterator(i:Int=1,j:Int=0,count:Int=0):Int={
       i match {
         case _ if i == len => count
         case _ if (j>=2) => swap(j);if (C(j-1)< C(j-2)) iterator(i,j-1,count-1) else iterator(i+1,0,count)

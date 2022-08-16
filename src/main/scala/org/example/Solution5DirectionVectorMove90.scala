@@ -1,6 +1,6 @@
 package org.example
 
-object Solution5 {
+object Solution5DirectionVectorMove90 {
   def main(args: Array[String]) {
     val x=Solution5(2, 4, 1, 6)
     println(x)

@@ -7,7 +7,7 @@ import scala.collection.mutable
  *
  */
 
-object Solution2 {
+object Solution2MatricRecover {
   def main(args: Array[String]) {
     println("Hello World!")
   }

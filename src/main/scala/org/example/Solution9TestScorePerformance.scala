@@ -1,6 +1,6 @@
 package org.example
 
-object Solution9 {
+object Solution9TestScorePerformance {
   def main(args: Array[String]) {
     val x=Solution9(Array("test1a", "test2", "test1b", "test1c", "test3"),Array("Wrong answer", "OK", "Runtime error", "OK", "Time limit exceeded"))
     println(x)

@@ -1,6 +1,6 @@
 package org.example
 
-object Solution6 {
+object Solution6minNumberofTressShortenforAestethicAlternate {
   def main(args: Array[String]) {
     val x=Solution6(Array(2, 4, 1, 6))
     println(x)

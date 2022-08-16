@@ -1,7 +1,7 @@
 package org.example
 
 
-object Solution4 {
+object Solution4LoadBalancingPick2Equalout {
   def main(args: Array[String]) {
     val x=Solution4(Array(2, 4, 1, 6, 5, 9, 7))
     println(x)
